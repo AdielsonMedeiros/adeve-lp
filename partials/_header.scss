@@ -1,0 +1,200 @@
+
+
+header{
+    width: 100%;
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*music icon */
+
+.music{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.title{
+    font-weight: 700;
+    font-size: 12px;
+    color: $white-normal;
+    text-align: center;
+    margin-bottom:10px;
+}
+
+.player{
+    position: relative;
+    width: 125px;
+    min-height: 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 15px;
+    
+}
+
+.btns{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.btns span{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: $white-normal;
+    box-shadow: inset 0 -3px 3px rgba(0,0,0,0.1),
+                0 3px 5px rgba(0,0,0,0.1),
+                0 5px 8px rgba(0,0,0,0.1);
+}
+.btns span:active,
+.btns span.active{
+    color: $white-normal;
+    box-shadow: inset 0 -4px 3px rgba(0,0,0,0.025),
+                inset 0 3px 5px rgba(0,0,0,0.15);
+}
+
+.btns span.playPause{
+    width: 25px;
+    height: 25px;
+}
+
+.btns span ion-icon{
+    font-size: 1em;
+}
+
+.btns span.playPause ion-icon{
+    font-size: 2em;
+}
+
+.btns span ion-icon:hover{
+    transform: scale(1.40);
+    
+
+
+}
+
+.music input{
+    -webkit-appearance: none; /* Remove estilos padrões do navegador */
+    width: 100px; /* Largura do controle */
+    height: 1px; /* Altura da barra */
+    background: #d3d3d3; /* Cor de fundo da barra */
+    outline: none; /* Remove a borda quando clicado */
+    opacity: 0.4; /* Define a transparência da barra */
+    -webkit-transition: .2s; /* Adiciona uma transição suave */
+    transition: opacity .2s; /* Adiciona uma transição suave */
+  }
+  
+  /* Estilo da barra de progresso do volume */
+  .volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove estilos padrões do navegador */
+    appearance: none; /* Remove estilos padrões do navegador */
+    width: 10px; /* Largura do "botão" deslizante */
+    height: 10px; /* Altura do "botão" deslizante */
+    background: $white-normal; /* Cor do "botão" deslizante */
+    cursor: pointer; /* Define o cursor como ponteiro ao passar o mouse */
+    border-radius: 10%; /* Deixa o "botão" circular */
+  }
+  
+  /* Estilo para quando o controle deslizante está ativo (sendo arrastado) */
+  .volume-slider:hover {
+    opacity: 1; /* Torna a barra totalmente opaca ao passar o mouse */
+  }
+
+
+
+/*final do player*/
+
+
+i{
+    color: $white-normal;
+}
+
+.header-icons{
+    display: flex;
+    gap: 14px;
+}
+
+.header-icons a:hover{
+    i{
+        animation: translateY 0.8s infinite alternate;
+        
+    }
+}
+.icon-1 i:hover{
+    color: #E4405F;
+    
+}
+.icon-2 i:hover{
+    color: rgb(0, 17, 255);
+}
+.icon-3 i:hover{
+    color: rgb(255, 0, 0);
+}
+
+@keyframes translateY {
+    from{
+        transform: translateY(0) scale(1);
+    }
+    to{
+        transform: translateY(-8px) scale(1.1);
+
+    } 
+
+}
+
+
+
+
+.header-logo{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    header{
+        margin-top: 20px;
+    }
+
+    .header-content{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        i{
+            margin-top: 16px;
+            font-size: 34px;
+        }
+    }
+
+    .header-logo img{
+        height: 300px;
+        width: 300px;
+        margin-top: 46px;
+    }
+
+    
+}

@@ -12,7 +12,7 @@
     content: "";
     display: block;
     position: absolute;
-    background-image: linear-gradient(to bottom, rgba(18, 24, 38, 0.7), #121826), url("assets/bgbg.jpg");
+    background-image: linear-gradient(to bottom, rgba(18, 24, 38, 0.7), $dark-primary), url("assets/bgbg.jpg");
     left: 0;
     top: 0;
     width: 100%;

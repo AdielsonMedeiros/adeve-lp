@@ -42,9 +42,11 @@ function loadSong(songList){
 let i = 0;
 loadSong(songList[i]);
 
+
+audio.volume = 0.1;
+volumeSlider.value = 0.1;
+
 function prevSong(){
-    // Não há "faixa anterior" para uma rádio ao vivo, então esta função pode ser ajustada
-    // ou removida se não for necessária.
     i = (i - 1 + songList.length) % songList.length;
     loadSong(songList[i]);
     playSong();
@@ -52,7 +54,6 @@ function prevSong(){
 prev.addEventListener("click", prevSong);
 
 function nextSong(){
-    // Da mesma forma, não há "próxima faixa" para uma rádio ao vivo.
     i = (i + 1) % songList.length;
     loadSong(songList[i]);
     playSong();

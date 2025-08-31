@@ -1,20 +1,18 @@
-
-
-.container{
+.container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 8px;
+    padding: 0 16px;
 }
 
-.bg-home{
+.bg-home {
     position: relative;
 }
 
-.bg-home:before{
-    content: '';
+.bg-home:before {
+    content: "";
     display: block;
     position: absolute;
-    background-image: linear-gradient(to bottom, rgba(5,18,30,0.1), #000), url("assets/bgbg.jpg");
+    background-image: linear-gradient(to bottom, rgba(5, 18, 30, 0.1), #1a1a1a), url("assets/bgbg.jpg");
     left: 0;
     top: 0;
     width: 100%;
@@ -26,305 +24,278 @@
     opacity: 0.9;
 }
 
-
-//-------------------- Finalizado home
-
-
-//--------------Iniciando o Hero abaixo
-
-
-.hero{
-    color: $white-normal;
+.hero {
+    color: #f8f9fa;
     min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 14px;
-
-
-    h1{
-        text-align: center;
-        line-height: 150%;
-        max-width: 940px;
-        font-size: 46px;
-
-    }
-
-    p{
-        text-align: center;
-        margin: 14px 0;
-
-    }
 }
 
-.button-contact{
+.hero h1 {
+    text-align: center;
+    line-height: 150%;
+    max-width: 940px;
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.hero p {
+    text-align: center;
+    margin: 14px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #e9ecef;
+}
+
+.button-contact {
     padding: 14px 28px;
-    color: $white-normal;
+    color: #f8f9fa;
     background-color: transparent;
     font-size: 18px;
     font-weight: 600;
     margin: 14px 0;
+    border: 1px solid #f8f9fa;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.button-contact:hover{
-    animation: scaleButton 0.8s alternate infinite;
-    border: 1px solid #fff;
-}
-
-@keyframes scaleButton {
-    from{
-        transform: scale(1);
-    }
-
-    to{
-        transform: scale(1.07);
-    }
+.button-contact:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
 }
 
 @media screen and (max-width: 768px) {
-    .hero{
+    .hero {
         min-height: 60vh;
+    }
 
-        h1{
-            font-size: 38px;
-            padding: 0 14px;
-            width: 100%;
-        }
+    .hero h1 {
+        font-size: 38px;
+        padding: 0 14px;
+        width: 100%;
+    }
 
-        p{
-            font-size: 14px;
-        }
+    .hero p {
+        font-size: 16px;
     }
 }
-
 
 @media screen and (max-width: 480px) {
-    .hero h1{
-        font-size: 24px;
+    .hero h1 {
+        font-size: 28px;
     }
-
 }
 
-//-------FINAL DO HERO
-
-
-
-// DESCRIÇAO --------------------
-
-.about{
-    background-color: #000;
+// DESCRIÇÃO --------------------
+.about {
+    background-color: #1a1a1a;
     overflow: hidden;
-    color: $white-normal;
-
+    color: #f8f9fa;
 }
-.about-content{
+
+.about-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
-    padding: 34px 14px 64px 14px;
-
-
-
-    img{
-        width: 300px;
-        border-radius: 10px;
-
-    }
-
+    gap: 32px;
+    padding: 64px 16px;
+    flex-wrap: wrap;
 }
 
-.about-content{
-    flex: 1;
+.about-content img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
 }
 
-
-.about-description{
-    h2{
-        font-size: 38px;
-        margin-bottom: 24px;
-        margin-left: 24px;
-
-    }
-    p{
-        margin-bottom: 14px;
-        margin-left: 24px;
-        line-height: 150%;
-    }
+.about-description {
+    max-width: 600px;
 }
 
+.about-description h2 {
+    font-size: 42px;
+    margin-bottom: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #007bff;
+}
 
-@media screen and (max-width:768px){
-    .about-content{
+.about-description p {
+    margin-bottom: 24px;
+    line-height: 160%;
+    font-family: 'Poppins', sans-serif;
+    color: #e9ecef;
+}
+
+@media screen and (max-width: 768px) {
+    .about-content {
         flex-direction: column;
+        padding: 40px 16px;
     }
 
+    .about-description h2 {
+        font-size: 32px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .about-description p {
+        margin-left: 0;
+        text-align: center;
+    }
 }
-
-// descriçao finalizada
-
-
 
 // SERVIÇOS
-
-
-.diaCulto{
-    background-color: $white-normal;
-    color: $black-normal;
+.diaCulto {
+    background-color: #e9ecef;
+    color: #1a1a1a;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 54px 14px;
+    padding: 64px 16px;
 }
 
-
-.diaCulto-content h2{
+.diaCulto-content h2 {
     text-transform: uppercase;
     text-align: center;
-    font-size: 38px;
+    font-size: 42px;
     margin-bottom: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #007bff;
 }
 
-.diaCulto-content p{
-    line-height: 150%;
-    margin-bottom: 14px;
+.diaCulto-content p {
+    line-height: 160%;
+    margin-bottom: 32px;
     text-align: center;
     max-width: 780px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.cultos{
+.cultos {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 16px;
-    padding: 0 44px 34px 44px;
-
+    align-items: stretch;
+    gap: 24px;
+    padding: 0 16px;
+    flex-wrap: wrap;
 }
 
-.culto{
+.culto {
     flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
-    background-color: $white-normal;
-    border-radius: 8px;
-    box-shadow: 0px -1px 17px -4px rgba(0,0,0, 0.45);
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-
-
-    img{
-        width: 100%;
-        max-width: 354px;
-        transition: transform 0.2s;
-
-    }
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.culto img:hover{
-    transform: scale(1.1);
-    z-index: 1;
-    
+.culto img {
+    width: 100%;
+    max-width: 354px;
+    transition: transform 0.3s ease;
 }
 
-.culto-info{
+.culto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.culto-info {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 14px;
-    background-color: #ddd;
+    justify-content: center;
+    padding: 24px;
+    background-color: #f8f9fa;
     z-index: 99;
+    text-align: center;
 }
 
+.culto-info strong {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #1a1a1a;
+}
 
-
-@media screen and (max-width: 768px){
-    .cultos{
+@media screen and (max-width: 768px) {
+    .cultos {
         flex-direction: column;
+        align-items: center;
     }
 
-    .culto img{
-        max-width: 740px;
-
+    .culto img {
+        max-width: 100%;
     }
 }
-
-
 
 // FOOTER
-
-
-.footer{
-    background: #000000;
+.footer {
+    background: #1a1a1a;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 54px 0;
     gap: 24px;
-    color: $white-normal;
+    color: #f8f9fa;
+    text-align: center;
 }
 
-.footer-icons{
+.footer-icons {
     display: flex;
-    gap: 8px;
-    color: $white-normal;
+    gap: 16px;
+    color: #f8f9fa;
 }
 
-
-
-.btn-up{
-
+.btn-up {
     position: fixed;
-    bottom: 14px;
+    bottom: 24px;
     right: 24px;
     z-index: 99;
-
-
-
-    img{
-        max-width: 74px;
-        transition: transform 0.4s;
-    }
-
-    img:hover{
-        transform: scale(1.1);
-    }
 }
 
-.btn-up .tooltip-text{
+.btn-up img {
+    max-width: 60px;
+    transition: transform 0.4s;
+}
+
+.btn-up img:hover {
+    transform: scale(1.1);
+}
+
+.btn-up .tooltip-text {
     visibility: hidden;
     position: absolute;
     width: 120px;
-    top: 8px;
-    left: -144px;
-    padding: 6px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px;
     border-radius: 8px;
     text-align: center;
-    justify-content: center;
-    background-color: $black-normal;
-    color: $white-normal;
+    background-color: #1a1a1a;
+    color: #f8f9fa;
     opacity: 0;
     transition: opacity 0.4s;
+    white-space: nowrap;
 }
 
-.btn-up:hover .tooltip-text{
+.btn-up:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
 
-
 @media screen and (max-width: 768px) {
-    .btn-up{
-        img{
-            max-width: 40px;
-        }
+    .btn-up img {
+        max-width: 40px;
     }
 }
-
-
-
-
-
-
-

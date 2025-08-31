@@ -1,35 +1,30 @@
-
-
-header{
+header {
     width: 100%;
 }
 
-.header-content{
+.header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-
 /*music icon */
-
-.music{
+.music {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 }
 
-.title{
+.title {
     font-weight: 700;
     font-size: 12px;
-    color: $white-normal;
+    color: #f8f9fa;
     text-align: center;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
-.player{
+.player {
     position: relative;
     width: 125px;
     min-height: 20px;
@@ -37,10 +32,9 @@ header{
     border: none;
     border-radius: 40px;
     padding: 10px 15px;
-    
 }
 
-.btns{
+.btns {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -48,7 +42,7 @@ header{
     width: 100%;
 }
 
-.btns span{
+.btns span {
     position: relative;
     width: 20px;
     height: 20px;
@@ -58,143 +52,125 @@ header{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: $white-normal;
-    box-shadow: inset 0 -3px 3px rgba(0,0,0,0.1),
-                0 3px 5px rgba(0,0,0,0.1),
-                0 5px 8px rgba(0,0,0,0.1);
-}
-.btns span:active,
-.btns span.active{
-    color: $white-normal;
-    box-shadow: inset 0 -4px 3px rgba(0,0,0,0.025),
-                inset 0 3px 5px rgba(0,0,0,0.15);
+    color: #f8f9fa;
+    box-shadow: inset 0 -3px 3px rgba(0, 0, 0, 0.1), 0 3px 5px rgba(0, 0, 0, 0.1), 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btns span.playPause{
+.btns span:active,
+.btns span.active {
+    color: #f8f9fa;
+    box-shadow: inset 0 -4px 3px rgba(0, 0, 0, 0.025), inset 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btns span.playPause {
     width: 25px;
     height: 25px;
 }
 
-.btns span ion-icon{
+.btns span ion-icon {
     font-size: 1em;
 }
 
-.btns span.playPause ion-icon{
+.btns span.playPause ion-icon {
     font-size: 2em;
 }
 
-.btns span ion-icon:hover{
-    transform: scale(1.40);
-    
-
-
+.btns span ion-icon:hover {
+    transform: scale(1.4);
 }
 
-.music input{
-    -webkit-appearance: none; /* Remove estilos padrões do navegador */
-    width: 100px; /* Largura do controle */
-    height: 1px; /* Altura da barra */
-    background: #d3d3d3; /* Cor de fundo da barra */
-    outline: none; /* Remove a borda quando clicado */
-    opacity: 0.4; /* Define a transparência da barra */
-    -webkit-transition: .2s; /* Adiciona uma transição suave */
-    transition: opacity .2s; /* Adiciona uma transição suave */
-  }
-  
-  /* Estilo da barra de progresso do volume */
-  .volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Remove estilos padrões do navegador */
-    appearance: none; /* Remove estilos padrões do navegador */
-    width: 10px; /* Largura do "botão" deslizante */
-    height: 10px; /* Altura do "botão" deslizante */
-    background: $white-normal; /* Cor do "botão" deslizante */
-    cursor: pointer; /* Define o cursor como ponteiro ao passar o mouse */
-    border-radius: 10%; /* Deixa o "botão" circular */
-  }
-  
-  /* Estilo para quando o controle deslizante está ativo (sendo arrastado) */
-  .volume-slider:hover {
-    opacity: 1; /* Torna a barra totalmente opaca ao passar o mouse */
-  }
-
-
-
-/*final do player*/
-
-
-i{
-    color: $white-normal;
+.music input {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 1px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.4;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
 }
 
-.header-icons{
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #f8f9fa;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.volume-slider:hover {
+    opacity: 1;
+}
+
+i {
+    color: #f8f9fa;
+}
+
+.header-icons {
     display: flex;
     gap: 14px;
 }
 
-.header-icons a:hover{
-    i{
-        animation: translateY 0.8s infinite alternate;
-        
-    }
+.header-icons a:hover i {
+    animation: translateY 0.8s infinite alternate;
 }
-.icon-1 i:hover{
+
+.icon-1 i:hover {
     color: #E4405F;
-    
 }
-.icon-2 i:hover{
-    color: rgb(0, 17, 255);
+
+.icon-2 i:hover {
+    color: #007bff;
 }
-.icon-3 i:hover{
-    color: rgb(255, 0, 0);
+
+.icon-3 i:hover {
+    color: #ff0000;
 }
 
 @keyframes translateY {
-    from{
+    from {
         transform: translateY(0) scale(1);
     }
-    to{
+    to {
         transform: translateY(-8px) scale(1.1);
-
-    } 
-
+    }
 }
 
-
-
-
-.header-logo{
-    width: 400px;
-    height: 200px;
+.header-logo {
+    width: 300px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
 @media screen and (max-width: 768px) {
-
-    header{
+    header {
         margin-top: 20px;
     }
 
-    .header-content{
+    .header-content {
         width: 100%;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
-
-        i{
-            margin-top: 16px;
-            font-size: 34px;
-        }
     }
 
-    .header-logo img{
-        height: 300px;
-        width: 300px;
+    .header-content i {
+        margin-top: 16px;
+        font-size: 34px;
+    }
+
+    .header-logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .header-logo img {
+        width: 100%;
+        height: 100%;
         margin-top: 46px;
     }
-
-    
 }

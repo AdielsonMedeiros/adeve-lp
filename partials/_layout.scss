@@ -1,7 +1,7 @@
 .container {
-    max-width: 1440px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 24px;
 }
 
 .bg-home {
@@ -12,7 +12,7 @@
     content: "";
     display: block;
     position: absolute;
-    background-image: linear-gradient(to bottom, rgba(5, 18, 30, 0.1), #1a1a1a), url("assets/bgbg.jpg");
+    background-image: linear-gradient(to bottom, rgba(18, 24, 38, 0.7), #121826), url("assets/bgbg.jpg");
     left: 0;
     top: 0;
     width: 100%;
@@ -20,96 +20,105 @@
     z-index: -1;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 0;
-    opacity: 0.9;
+    background-position: center;
+    opacity: 1;
 }
 
 .hero {
-    color: #f8f9fa;
-    min-height: 80vh;
+    color: $text-light;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 14px;
+    padding: 24px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .hero h1 {
     text-align: center;
-    line-height: 150%;
-    max-width: 940px;
-    font-size: 48px;
-    font-family: 'Montserrat', sans-serif;
+    line-height: 1.3;
+    max-width: 900px;
+    font-size: 56px;
+    font-family: $font-secondary;
     font-weight: 700;
+    margin-bottom: 24px;
+    color: $white;
 }
 
 .hero p {
     text-align: center;
-    margin: 14px 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    color: #e9ecef;
+    margin: 16px 0;
+    font-family: $font-primary;
+    font-size: 20px;
+    color: $text-light;
+    max-width: 700px;
+    line-height: 1.6;
 }
 
 .button-contact {
-    padding: 14px 28px;
-    color: #f8f9fa;
+    padding: 18px 40px;
+    color: $white;
     background-color: transparent;
     font-size: 18px;
     font-weight: 600;
-    margin: 14px 0;
-    border: 1px solid #f8f9fa;
+    margin: 32px 0;
+    border: 2px solid $primary-color;
     border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .button-contact:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-3px);
+    background-color: $primary-color;
+    color: $white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 119, 182, 0.4);
 }
 
 @media screen and (max-width: 768px) {
     .hero {
-        min-height: 60vh;
+        min-height: 70vh;
     }
-
     .hero h1 {
-        font-size: 38px;
-        padding: 0 14px;
-        width: 100%;
+        font-size: 40px;
+        padding: 0 16px;
     }
-
     .hero p {
-        font-size: 16px;
+        font-size: 18px;
     }
-}
-
-@media screen and (max-width: 480px) {
-    .hero h1 {
-        font-size: 28px;
+    .button-contact {
+        padding: 16px 32px;
     }
 }
 
 // DESCRIÇÃO --------------------
 .about {
-    background-color: #1a1a1a;
+    background-color: $dark-primary;
     overflow: hidden;
-    color: #f8f9fa;
+    color: $text-light;
+    padding: 100px 0;
 }
 
 .about-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 32px;
-    padding: 64px 16px;
+    gap: 60px;
     flex-wrap: wrap;
 }
 
 .about-content img {
     width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease;
+}
+
+.about-content img:hover {
+    transform: scale(1.02);
 }
 
 .about-description {
@@ -117,97 +126,106 @@
 }
 
 .about-description h2 {
-    font-size: 42px;
+    font-size: 52px;
     margin-bottom: 24px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $font-secondary;
     font-weight: 700;
-    color: #007bff;
+    color: $primary-color;
+    letter-spacing: 1.5px;
 }
 
 .about-description p {
     margin-bottom: 24px;
-    line-height: 160%;
-    font-family: 'Poppins', sans-serif;
-    color: #e9ecef;
+    line-height: 1.8;
+    font-family: $font-primary;
+    color: $text-light;
 }
 
 @media screen and (max-width: 768px) {
+    .about {
+        padding: 80px 0;
+    }
     .about-content {
         flex-direction: column;
-        padding: 40px 16px;
+        gap: 40px;
     }
-
     .about-description h2 {
-        font-size: 32px;
-        margin-left: 0;
+        font-size: 40px;
         text-align: center;
     }
-
     .about-description p {
-        margin-left: 0;
         text-align: center;
     }
 }
 
-// SERVIÇOS
+// SERVIÇOS ---------------------
 .diaCulto {
-    background-color: #e9ecef;
-    color: #1a1a1a;
+    background-color: $white;
+    color: $dark-primary;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 64px 16px;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.diaCulto-content {
+    max-width: 800px;
+    padding: 0 24px;
 }
 
 .diaCulto-content h2 {
     text-transform: uppercase;
-    text-align: center;
-    font-size: 42px;
-    margin-bottom: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 52px;
+    margin-bottom: 16px;
+    font-family: $font-secondary;
     font-weight: 700;
-    color: #007bff;
+    color: $primary-color;
+    letter-spacing: 2px;
 }
 
 .diaCulto-content p {
-    line-height: 160%;
-    margin-bottom: 32px;
-    text-align: center;
-    max-width: 780px;
-    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    margin-bottom: 64px;
+    font-family: $font-primary;
+    color: $dark-primary;
+    max-width: 700px;
 }
 
 .cultos {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 24px;
-    padding: 0 16px;
+    gap: 32px;
+    padding: 0 24px;
     flex-wrap: wrap;
 }
 
 .culto {
     flex: 1;
     min-width: 300px;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: $dark-secondary;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    color: $text-light;
 }
 
 .culto img {
     width: 100%;
-    max-width: 354px;
-    transition: transform 0.3s ease;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
 .culto:hover {
-    transform: translateY(-8px);
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .culto-info {
@@ -215,78 +233,88 @@
     display: flex;
     justify-content: center;
     padding: 24px;
-    background-color: #f8f9fa;
-    z-index: 99;
     text-align: center;
+    background-color: $dark-secondary;
+    font-family: $font-secondary;
+    font-weight: 600;
 }
 
 .culto-info strong {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: #1a1a1a;
+    color: $text-light;
+    font-size: 1.2em;
 }
 
 @media screen and (max-width: 768px) {
-    .cultos {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .culto img {
-        max-width: 100%;
+    .culto {
+        min-width: 280px;
     }
 }
 
-// FOOTER
+// FOOTER -----------------------
 .footer {
-    background: #1a1a1a;
+    background: $dark-primary;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 54px 0;
-    gap: 24px;
-    color: #f8f9fa;
+    padding: 64px 0;
+    gap: 28px;
+    color: $text-light;
     text-align: center;
 }
 
 .footer-icons {
     display: flex;
-    gap: 16px;
-    color: #f8f9fa;
+    gap: 24px;
+}
+
+.footer img {
+    max-width: 180px;
+    margin-bottom: 16px;
+}
+
+.footer p {
+    font-family: $font-primary;
+    font-size: 15px;
+    color: $text-light;
+    opacity: 0.7;
 }
 
 .btn-up {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: 40px;
+    right: 40px;
     z-index: 99;
+    transition: transform 0.4s ease;
 }
 
 .btn-up img {
-    max-width: 60px;
+    max-width: 55px;
     transition: transform 0.4s;
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-up img:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 .btn-up .tooltip-text {
     visibility: hidden;
     position: absolute;
     width: 120px;
-    bottom: 100%;
+    bottom: 115%;
     left: 50%;
     transform: translateX(-50%);
     padding: 8px;
     border-radius: 8px;
     text-align: center;
-    background-color: #1a1a1a;
-    color: #f8f9fa;
+    background-color: $dark-secondary;
+    color: $text-light;
     opacity: 0;
     transition: opacity 0.4s;
     white-space: nowrap;
+    font-family: $font-primary;
 }
 
 .btn-up:hover .tooltip-text {
@@ -296,6 +324,6 @@
 
 @media screen and (max-width: 768px) {
     .btn-up img {
-        max-width: 40px;
+        max-width: 45px;
     }
 }

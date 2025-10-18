@@ -2,18 +2,27 @@
 
 
 $primary-color: #0077b6;
+$primary-light: #00a8e8;
 $secondary-color: #6c757d; 
+$accent-color: #ffd60a;
 
-$dark-primary: #121826; 
+$dark-primary: #0f1419; 
 $dark-secondary: #1a202c; 
+$dark-tertiary: #2d3748;
 $text-light: #e2e8f0; 
+$text-muted: #a0aec0;
 $white: #ffffff;
-
+$glass-bg: rgba(255, 255, 255, 0.1);
+$glass-border: rgba(255, 255, 255, 0.2);
 
 $instagram-color: #E4405F;
 $facebook-color: #1877F2;
 $youtube-color: #FF0000;
 
-
 $font-primary: 'Poppins', sans-serif;
 $font-secondary: 'Montserrat', sans-serif;
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $primary-color 0%, $primary-light 100%);
+$gradient-dark: linear-gradient(135deg, $dark-primary 0%, $dark-secondary 100%);
+$gradient-overlay: linear-gradient(135deg, rgba(0, 119, 182, 0.9) 0%, rgba(0, 168, 232, 0.8) 100%);

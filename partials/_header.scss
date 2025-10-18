@@ -30,19 +30,22 @@ header {
 .player {
     position: relative;
     width: 160px;
-    background-color: $dark-secondary;
+    background: $glass-bg;
+    backdrop-filter: blur(10px);
+    border: 1px solid $glass-border;
     border-radius: 50px;
     padding: 10px 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .player:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 119, 182, 0.3);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .btns {
@@ -73,15 +76,32 @@ header {
 .btns span.playPause {
     width: 44px;
     height: 44px;
-    background: $primary-color;
+    background: $gradient-primary;
     color: $white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 6px 20px rgba(0, 119, 182, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+    }
 }
 
 .btns span.playPause:hover {
-    transform: scale(1.05);
-    background-color: darken($primary-color, 10%);
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 119, 182, 0.6);
+    
+    &::before {
+        left: 100%;
+    }
 }
 
 .btns span ion-icon {
@@ -165,6 +185,7 @@ i {
     .header-logo {
         width: 160px;
         height: 160px;
+        animation: float 3s ease-in-out infinite;
     }
     .header-logo img {
         width: 100%;

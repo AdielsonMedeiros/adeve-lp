@@ -12,7 +12,7 @@
     content: "";
     display: block;
     position: absolute;
-    background-image: linear-gradient(to bottom, rgba(18, 24, 38, 0.7), $dark-primary), url("assets/bgbg.jpg");
+    background-image: $gradient-overlay, url("assets/bgbg.jpg");
     left: 0;
     top: 0;
     width: 100%;
@@ -22,6 +22,7 @@
     background-repeat: no-repeat;
     background-position: center;
     opacity: 1;
+    backdrop-filter: blur(1px);
 }
 
 .hero {
@@ -59,22 +60,41 @@
 .button-contact {
     padding: 18px 40px;
     color: $white;
-    background-color: transparent;
+    background: $glass-bg;
+    backdrop-filter: blur(10px);
     font-size: 18px;
     font-weight: 600;
     margin: 32px 0;
     border: 2px solid $primary-color;
     border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s ease;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: $gradient-primary;
+        transition: left 0.4s ease;
+        z-index: -1;
+    }
 }
 
 .button-contact:hover {
-    background-color: $primary-color;
     color: $white;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 119, 182, 0.4);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 119, 182, 0.4);
+    border-color: $primary-light;
+    
+    &::before {
+        left: 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -95,10 +115,23 @@
 
 // DESCRIÇÃO --------------------
 .about {
-    background-color: $dark-primary;
+    background: $gradient-dark;
     overflow: hidden;
     color: $text-light;
-    padding: 100px 0;
+    padding: 120px 0;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 80%, rgba(0, 119, 182, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(0, 168, 232, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+    }
 }
 
 .about-content {
@@ -112,13 +145,17 @@
 .about-content img {
     width: 100%;
     max-width: 500px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    transition: transform 0.4s ease;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    border: 2px solid $glass-border;
+    position: relative;
+    z-index: 1;
 }
 
 .about-content img:hover {
-    transform: scale(1.02);
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 25px 80px rgba(0, 119, 182, 0.3);
 }
 
 .about-description {
@@ -127,11 +164,16 @@
 
 .about-description h2 {
     font-size: 52px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     font-family: $font-secondary;
     font-weight: 700;
-    color: $primary-color;
+    background: $gradient-primary;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     letter-spacing: 1.5px;
+    position: relative;
+    z-index: 1;
 }
 
 .about-description p {
@@ -178,11 +220,27 @@
 .diaCulto-content h2 {
     text-transform: uppercase;
     font-size: 52px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     font-family: $font-secondary;
     font-weight: 700;
-    color: $primary-color;
+    background: $gradient-primary;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     letter-spacing: 2px;
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: $gradient-primary;
+        border-radius: 2px;
+    }
 }
 
 .diaCulto-content p {
@@ -208,12 +266,28 @@
     max-width: 450px;
     display: flex;
     flex-direction: column;
-    background-color: $dark-secondary;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: $glass-bg;
+    backdrop-filter: blur(15px);
+    border: 1px solid $glass-border;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: all 0.4s ease;
     color: $text-light;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
 }
 
 .culto img {
@@ -224,19 +298,30 @@
 }
 
 .culto:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 119, 182, 0.3);
+    border-color: rgba(0, 119, 182, 0.5);
+    
+    &::before {
+        opacity: 1;
+    }
+    
+    img {
+        transform: scale(1.1);
+    }
 }
 
 .culto-info {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 24px;
+    padding: 28px 24px;
     text-align: center;
-    background-color: $dark-secondary;
+    background: linear-gradient(135deg, rgba(26, 32, 44, 0.9) 0%, rgba(45, 55, 72, 0.9) 100%);
     font-family: $font-secondary;
     font-weight: 600;
+    position: relative;
+    z-index: 1;
 }
 
 .culto-info strong {
@@ -250,17 +335,69 @@
     }
 }
 
+// LOCALIZAÇÃO ------------------
+.localizacao {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 100px 0;
+    
+    .diaCulto {
+        background: transparent;
+        padding: 0 0 60px 0;
+        
+        h2 {
+            margin-bottom: 20px;
+        }
+        
+        p {
+            font-size: 18px;
+            color: $dark-primary;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    }
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    
+    iframe {
+        border-radius: 20px;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
 // FOOTER -----------------------
 .footer {
-    background: $dark-primary;
+    background: $gradient-dark;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 64px 0;
-    gap: 28px;
+    padding: 80px 0 40px;
+    gap: 32px;
     color: $text-light;
     text-align: center;
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: $gradient-primary;
+    }
 }
 
 .footer-icons {
